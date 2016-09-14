@@ -1,93 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-.page {
-	margin: 2em auto; width: 35em; border: 5px solid #ccc;
-	padding: 0.8em; background: white;}
+---
+layout: default
+---
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
+<div class="home">
 
-.switch input {display:none;}
+  <h1 class="page-heading">Posts</h1>
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
 
-input:checked + .slider {
-  background-color: #2196F3;
-}
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-</style>
-</head>
-<body>
-	<div class="page">
-		
-<h1>Webpage for Yue Dongze</h1>
-<h2>Under serious construction</h2>
-
-<label class="switch">
-  <input type="checkbox">
-  <div class="slider"></div>
-</label>
-
-<label class="switch">
-  <input type="checkbox" checked>
-  <div class="slider"></div>
-</label><br><br>
-
-<label class="switch">
-  <input type="checkbox">
-  <div class="slider round"></div>
-</label>
-
-<label class="switch">
-  <input type="checkbox" checked>
-  <div class="slider round"></div>
-</label>
-	</div>
-</body>
-</html>
+</div>
