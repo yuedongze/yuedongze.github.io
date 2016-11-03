@@ -41,8 +41,8 @@
           <ul class="nav navbar-nav">
             <li><a href="index.html">Home</a></li>
             <li class="active"><a href="#">Projects</a></li>
-			<li><a href="#photo">Photography & Video</a></li>
-            <li><a href="#contact">Contact</a></li>
+			<li><a href="http://esteoeste.lofter.com">Photography & Video</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -57,33 +57,35 @@
 	
         <!-- START THE FEATURETTES -->
 
-		<hr class="featurette-divider" id="dtmf">
+        <hr class="featurette-divider" id="stocal">
 
         <div class="row featurette">
           <div class="col-md-7">
-            <h2 class="featurette-heading">DTMF dialer with speech feedback. <span class="text-muted">PIC32 Project.</span></h2>
-            <p class="lead">A Dual Tone Multi-Frequency Generator like those used on any cell phone. As you press the buttons, the system will speak digits. The system will record all the input digits and plays back to simulate a redial. All the tones are generated with Direct Digital Synthesis using a Sine look up table.</p>
-			<button type="button" class="btn btn-success">Source Code</button>
-			<button type="button" class="btn btn-info">Course Website</button>
+            <h2 class="featurette-heading">Sony Camera Product Storage Calculator. <span class="text-muted">HTML/JS Project.</span></h2>
+            <p class="lead">A pure HTML/JS webpage that interactively calculates the amount of storage needed for selected camera products. <br> Created during my summer internship.</p>
+			<a href="stocal/StoCal.html"><button type="button" class="btn btn-primary">Webpage</button></a>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-responsive center-block" src="pics/dtmf.jpg" alt="DTMF">
+            <img class="featurette-image img-responsive center-block" src="pics/stocal.png" alt="Generic placeholder image">
           </div>
         </div>
 
-        <hr class="featurette-divider" id="tachometer">
 
-        <div class="row featurette">
-          <div class="col-md-7 col-md-push-5">
-            <h2 class="featurette-heading">Motor controller and tachometer. <span class="text-muted">PIC32 Project.</span></h2>
-            <p class="lead">A digital tachometer using a pair of infrared LED and photodiode. Then the output is fed into an op-amp comparator, utilizing hysteresis for better output. The result is fed into an Input Capture Module. Then PIC32 computes the PID equation to drive the fan with PWM. The fan circuit and PWM pulse is opto-isolated for max protection.</p>
-			<button type="button" class="btn btn-success">Source Code</button>
-			<button type="button" class="btn btn-info">Course Website</button>
-          </div>
-          <div class="col-md-5 col-md-pull-7">
-            <img class="featurette-image img-responsive center-block" src="pics/tachometer.jpg" alt="Generic placeholder image">
-          </div>
-        </div>
+
+        <hr class="featurette-divider" id="xylo">
+       
+       <div class="row featurette">
+         <div class="col-md-7 col-md-push-5">
+           <h2 class="featurette-heading">Touchless Xylo. <span class="text-muted">LeapMotion, Raspberry Pi, Arduino Project.</span></h2>
+           <p class="lead">A touchless xylophone controled with Leap Motion infrared sensor. The python application running on the computer fetches the current orientation and position of the hand and encodes the information into HTTP request to the flask server running on the Raspberry Pi. Then the server on the Pi performs a calculation and controls the Arduino to drive the Parallax Servos.</p>
+		<a href="https://github.com/yuedongze/touchless_xylo"><button type="button" class="btn btn-success">Source Code</button></a>
+         </div>
+         <div class="col-md-5 col-md-pull-7">
+           <img class="featurette-image img-responsive center-block" src="pics/touchless_xylo_square.jpg" alt="Generic placeholder image">
+         </div>
+       </div>
+
+
 
         <hr class="featurette-divider" id="arm">
 
@@ -91,10 +93,42 @@
           <div class="col-md-7">
             <h2 class="featurette-heading">ARM-based Rhythm Game. <span class="text-muted">FRDM-K64F Project.</span></h2>
             <p class="lead">Music Rhythm Game created on ARM-based FRDM-K64F dev-board as final project from ECE3140 Embedded Systems. Main target of the game is to hit the falling blocks with the controller at the right beat of the music and gain fever. Finished product feeling with NES Controller, LED Matrix and SD Card integration.</p>
-			<button type="button" class="btn btn-success">Source Code</button>
+			<a href="https://www.youtube.com/watch?v=xEkDMYDAfX0"><button type="button" class="btn btn-primary">Video</button></a>
+			<a href="https://github.com/yuedongze/rhythm_game"><button type="button" class="btn btn-success">Source Code</button></a>
+			<a href="files/rhythm_report.pdf"><button type="button" class="btn btn-warning">Final Project Report</button></a>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-responsive center-block" src="pics/arm.png" alt="Generic placeholder image">
+          </div>
+        </div>
+
+		
+
+        <hr class="featurette-divider" id="tachometer">
+
+        <div class="row featurette">
+          <div class="col-md-7 col-md-push-5">
+            <h2 class="featurette-heading">Motor controller and tachometer. <span class="text-muted">PIC32 Project.</span></h2>
+            <p class="lead">A digital tachometer using a pair of infrared LED and photodiode. Then the output is fed into an op-amp comparator, utilizing hysteresis for better output. The result is fed into an Input Capture Module. Then PIC32 computes the PID equation to drive the fan with PWM. The fan circuit and PWM pulse is opto-isolated for max protection.</p>
+			<a href="#"><button type="button" class="btn btn-success">Source Code</button></a>
+			<a href="https://people.ece.cornell.edu/land/courses/ece4760/labs/f2016/lab4.html"><button type="button" class="btn btn-info">Course Website</button></a>
+          </div>
+          <div class="col-md-5 col-md-pull-7">
+            <img class="featurette-image img-responsive center-block" src="pics/tachometer.jpg" alt="Generic placeholder image">
+          </div>
+        </div>
+
+		<hr class="featurette-divider" id="dtmf">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">DTMF dialer with speech feedback. <span class="text-muted">PIC32 Project.</span></h2>
+            <p class="lead">A Dual Tone Multi-Frequency Generator like those used on any cell phone. As you press the buttons, the system will speak digits. The system will record all the input digits and plays back to simulate a redial. All the tones are generated with Direct Digital Synthesis using a Sine look up table.</p>
+			<a href="#"><button type="button" class="btn btn-success">Source Code</button></a>
+			<a href="https://people.ece.cornell.edu/land/courses/ece4760/labs/f2016/lab2_dtmf.html"><button type="button" class="btn btn-info">Course Website</button></a>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" src="pics/dtmf.jpg" alt="DTMF">
           </div>
         </div>
 
@@ -104,7 +138,7 @@
           <div class="col-md-7 col-md-push-5">
             <h2 class="featurette-heading">Sumo Wrestling Robot. <span class="text-muted">Arduino Project.</span></h2>
             <p class="lead">A Wrestling Robot that participated in the 2015 Fall Mechatronics Sumo Robot Competition and won 8th place. Customized H-Bridge design to obtain more power from the servos. Powerful mouse-trap-based slapper mechanism ensures lethal aggression.</p>
-			<button type="button" class="btn btn-warning">Final Project Report</button>
+			<a href="files/3780_report.pdf"><button type="button" class="btn btn-warning">Final Project Report</button></a>
           </div>
           <div class="col-md-5 col-md-pull-7">
             <img class="featurette-image img-responsive center-block" src="pics/mechatronics.jpg" alt="Generic placeholder image">

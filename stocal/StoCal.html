@@ -1,0 +1,125 @@
+<html>
+<head>
+	<style>
+	  #byte_content {
+	    margin: 5px;
+	    max-height: 60px;
+	    overflow-y: auto;
+	    overflow-x: hidden;
+		background: white;
+	  }
+	  body {
+		  font-family: sans-serif; background: #000;
+	  }
+	  .show {
+		  margin: 1em auto;
+		  width: auto;
+		  border: 5px solid #ccc;
+		  padding: 0.8em;
+		  background: #F0F0F0;
+		  overflow-x:auto;
+		  text-align: center;
+	  }
+	  .copyright {
+		  font-family: 'Georgia';
+		  color: FFF;
+		  text-align: right;
+	  }
+	  .help {
+		  margin: 1em auto;
+		  width: auto;
+		  border: 5px solid #ccc;
+		  padding: 0.8em;
+		  background: #F0F0F0;
+		  overflow-x:auto;
+		  text-align: left;
+	  }
+	  .line {
+		  margin: 1em auto;
+	  }
+	  h1 {
+		  font-family: 'Georgia', serif; margin: 0;
+		  color: #FFF;
+		  text-align: center;
+		  border-bottom: 2px solid #eee;
+	  }
+	  h2 {
+		  font-family: 'Arial';
+		  font-size: 130%;
+		  border-bottom: 2px solid #eee;
+	  }
+	  h3 {
+		  font-family: 'Arial';
+		  font-size: 250%;
+	  }
+	  th {
+		  font-family: 'Georgia';
+		  font-weight: lighter;
+	  }
+	</style>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Storage Calculator</title>
+	<script src="jquery-3.0.0.min.js"></script>
+</head>
+
+
+<body id="sample" onload="">
+	<h1>Sony Network Camera Storage Calculator</h1>
+	<div class="help" id="help">
+		<h2>Storage Calculator User Instruction</h2>
+		<span>This storage calculator is dedicated for calculating storage requirement and bitrate consumption of Sony's camera products.<p>To use the calculator, first please choose the camera model that you want to use in the calculation on the bottom. Once you click the camera profile, the page will automatically load the corresponding data and enable mode selection.<br>	Also, we have provided a customized camera profile feature so that you can load any camera database written in the corresponding JSON format into the storage calculator and perform calculation. In order to load the database, simply click the Choose File button below "Manually Load Camera Database", select the corresponding database file and click "Read".<p>After choosing the camera model, the page should automatically load the camera data and enables the user to add camera options.<p>
+		When you choose the camera data, the page automatically added one input line for input for you. You can find different camera modes, images, bitrate options and more control parameters in the input fields.<br>Also, you can choose your video settings (NTSC or PAL) below the camera model name. All the input fields will automatically update its value based on your video mode.<br>The page will automatically update the bitrate and storage information for every input line and for total usage. Please add the lines as much as you need, and the page will automatically take account into all available lines.<p>An input line can also be removed by simply clicking the remove button on top of the corresponding line. Also there is a Clear All option besides the "Add New Option" button, which simply allows you to remove all lines.<p>
+		On the bottom of the page there will be a simple calculation field. You can enter your current storage information or estimated time of calculation to obtain how much storage and how long time your situation requires.<p>
+		There is also a printer friendly page option on the bottom of the page. Simply clicking the button will open up a new page with no redundant formatting and can be easily printed.
+		</span>
+		<p><a href=# id="hide">Hide</a>
+	</div>
+	<div class="show">
+	<div id="fileinput">
+		<h2>Please Choose the Camera Data File</h2><p>
+		<button id="sjk">SNC-VB770</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="tyo">SNC-VM772R</button><p>
+			<h2>Or Manually Load Camera Database</h2>
+	<input type="file" name="file" id="files"/>
+	<button id="read">Read</button>
+	</div>
+	<span id="cameratype"></span>
+	<p>
+	<div id="func">
+	<h2>Video Mode Select:
+	<select name="vmode" id="vmode">
+		<option value="NTSC">NTSC</option>
+		<option value="PAL">PAL</option>
+	</select> </h2>
+	<p>
+	<button id="add">Add New Option</button>
+	<button id="clear">Clear All</button>
+	</div>
+	<span><a href=# id="show">User Instruction</a></span>
+</div>
+	<div id="byte_content"></div>
+	<div id="masterdebug" class="show">
+	<div>
+		<h2>Total:&nbsp;&nbsp; <span id="camno"></span>&nbsp;Camera(s)</h2>
+		<h2>Total Bandwidth Required:&nbsp;&nbsp;<span id="tbw"></span></h2>
+		<h2>Total Storage Required:&nbsp;&nbsp;<span id="tstr"></span></h2>
+	</div>
+	<div id="debug">
+	</div>
+	</div>
+	<div id="summary" class="show">
+		<button id="updatebw">Update</button>
+		<button id="print">Print Friendly Page</button>
+		<h2>Storage capacity required for <input type="text" id="days" value="30" size=5 onchange="updateBW()"/> Days will be approximately <span id="totalsc"></span>.
+		</h2>
+		<h2>
+			Storage capacity of <input type="text" id="gigs" value="100" size=6 onchange="updateBW()"/> GB will last approximately <span id="dayhr"></span>.
+		</h2>
+	</div>
+	<script src="StoCal.js"></script>
+	<div class="copyright">
+		Created for Sony internal use only.<br>
+		Dongze Yue. 2016 Jul.
+	</div>
+</body>
+
+</html>
